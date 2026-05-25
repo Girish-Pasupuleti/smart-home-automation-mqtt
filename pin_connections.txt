@@ -1,0 +1,22 @@
+Voice Controlled Smart Home Automation - Pin Connections
+
+ESP32 Connections:
+
+Bedroom Light Relay IN  -> GPIO 23
+Hall Light Relay IN     -> GPIO 22
+DC Fan Relay IN         -> GPIO 21
+
+Relay Module VCC        -> 5V
+Relay Module GND        -> GND
+
+ESP32 WiFi Connection   -> Home WiFi Network
+MQTT Communication      -> WiFi via MQTT Broker
+
+Power Supply:
+ESP32                   -> USB / 5V
+Relay Module            -> External 5V (if required)
+
+Controlled Appliances:
+Relay 1 -> Bedroom Light
+Relay 2 -> Hall Light
+Relay 3 -> DC Fan

@@ -1,0 +1,56 @@
+Voice Controlled Smart Home Automation - MQTT Configuration
+
+MQTT Broker Details
+-------------------
+Broker Address : broker.hivemq.com
+Protocol       : MQTT
+Connection     : WiFi
+
+MQTT Topics Used
+----------------
+
+1. Bedroom Light Control
+Topic: home/bedroom/light
+Commands:
+ON  -> Turn ON bedroom light
+OFF -> Turn OFF bedroom light
+
+2. Hall Light Control
+Topic: home/hall/light
+Commands:
+ON  -> Turn ON hall light
+OFF -> Turn OFF hall light
+
+3. DC Fan Control
+Topic: home/fan/control
+Commands:
+ON  -> Turn ON fan
+OFF -> Turn OFF fan
+
+Optional Status Topics
+----------------------
+
+Bedroom Light Status:
+home/bedroom/status
+
+Hall Light Status:
+home/hall/status
+
+Fan Status:
+home/fan/status
+
+Voice Command Flow
+------------------
+Voice Command
+   ↓
+Mobile Application
+   ↓
+MQTT Publish
+   ↓
+MQTT Broker
+   ↓
+ESP32 Subscriber
+   ↓
+Relay Switching
+   ↓
+Appliance Control

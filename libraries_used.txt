@@ -1,0 +1,16 @@
+Required Libraries for Voice Controlled Smart Home Automation
+
+1. WiFi.h
+   Purpose: Connect ESP32 to WiFi network
+
+2. PubSubClient.h
+   Purpose: MQTT communication between ESP32 and broker
+
+3. ArduinoJson.h
+   Purpose: JSON message handling (if used in your code)
+
+4. WebServer.h
+   Purpose: Local web/app communication (if used)
+
+5. ESP32Servo.h
+   Purpose: Servo control (only if used)
