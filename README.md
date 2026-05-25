@@ -1,58 +1,56 @@
 # 🏠 Voice Controlled Smart Home Automation using MQTT Protocol
 
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![ESP32](https://img.shields.io/badge/ESP32-IoT-blue.svg)]()
+[![MQTT](https://img.shields.io/badge/Protocol-MQTT-orange.svg)]()
+
 ## 📌 Project Overview
 
-The **Voice Controlled Smart Home Automation System** is an Internet of Things (IoT)-based embedded project designed to automate household appliances through voice commands and a mobile application interface.
+The **Voice Controlled Smart Home Automation System** is an IoT-based embedded systems project developed using the **ESP32 microcontroller**, **MQTT communication protocol**, and a **web/mobile dashboard** for real-time smart appliance control.
 
-This system uses the **MQTT (Message Queuing Telemetry Transport) protocol** for lightweight, fast, and reliable communication between the mobile application and the ESP32 microcontroller over Wi-Fi.
+This system enables users to control home appliances through **voice commands** as well as manual dashboard controls over Wi-Fi. Commands are processed through the application dashboard and transmitted using MQTT protocol to the ESP32 controller, which executes appliance switching through a relay module.
 
-The project enables real-time control of multiple home appliances including:
+The project demonstrates practical implementation of:
 
-- 💡 Bedroom Light
-- 💡 Hall Light
-- 🌪️ DC Fan
-
-Users can control these appliances through voice commands using a dedicated mobile application, creating a smart, efficient, and user-friendly home automation environment.
-
-This project demonstrates practical implementation of:
-
-- Embedded Systems Design
+- Embedded Systems Engineering
 - Internet of Things (IoT)
-- MQTT Communication Protocol
-- ESP32 Wireless Communication
-- Relay-based Appliance Control
+- MQTT Publish-Subscribe Communication
+- ESP32 Wireless Control
 - Voice Command Processing
-- Mobile App Integration
+- Smart Home Automation
+- Relay-Based Appliance Switching
+- Web Dashboard Integration
 
 ---
 
-# 🎯 Project Objectives
+## 🎯 Project Objectives
 
-The main objectives of this project are:
+The primary objectives of this project are:
 
-- To design a smart home automation system using IoT technology
-- To control household appliances using voice commands
-- To establish real-time communication using MQTT protocol
-- To create a user-friendly mobile application interface
-- To reduce manual effort in controlling home appliances
-- To develop a scalable architecture for future smart home expansion
+- Design a smart home automation system using IoT technologies
+- Enable voice-based control of household appliances
+- Implement lightweight MQTT communication for real-time messaging
+- Develop a responsive smart dashboard interface
+- Reduce manual appliance control effort
+- Build scalable architecture for future automation expansion
 
 ---
 
-# 🚀 Features
+## 🚀 Features
 
 ### Core Features
-✔ Voice-controlled appliance switching  
-✔ Real-time MQTT communication  
-✔ Wireless control over Wi-Fi  
-✔ Mobile application integration  
-✔ Control of multiple appliances  
-✔ Lightweight communication protocol  
-✔ Fast response time  
-✔ Low power embedded implementation  
+✅ Voice-controlled appliance operation  
+✅ Real-time MQTT communication  
+✅ Wi-Fi based wireless automation  
+✅ Smart web/mobile dashboard control  
+✅ Low latency communication  
+✅ Lightweight embedded implementation  
+✅ Manual appliance switching support  
+✅ Expandable architecture for future devices  
 
-### Controlled Appliances
-This project currently controls:
+---
+
+## 💡 Controlled Appliances
 
 | Appliance | Function |
 |---------|----------|
@@ -62,60 +60,43 @@ This project currently controls:
 
 ---
 
-# 🛠 Technologies Used
+## 📱 Live Dashboard
 
-## Hardware
-- ESP32 Development Board
-- Relay Module
-- DC Fan
-- LED Bulbs / Lights
-- Breadboard
-- Jumper Wires
-- Power Supply
-- Wi-Fi Router
+Access the live dashboard here:
 
-## Software
-- Arduino IDE
-- MQTT Broker (HiveMQ / Mosquitto)
-- Mobile Application
-- Embedded C / Arduino Programming
-
-## Communication Protocol
-- MQTT Protocol
+🔗 **https://home-automation-voice-control.netlify.app**
 
 ---
 
-# 📡 About MQTT Protocol
+## 📸 Mobile Application Dashboard
 
-MQTT (Message Queuing Telemetry Transport) is a lightweight messaging protocol designed for IoT communication.
+![Dashboard](app_dashboard.png)
 
-It follows a **publish-subscribe model**, making it ideal for smart home automation applications where low bandwidth and fast communication are essential.
+The dashboard supports:
 
-### Why MQTT?
-- Lightweight protocol
-- Low latency
-- Fast communication
-- Reliable message delivery
-- Ideal for IoT devices
-- Supports scalable smart home architecture
+- Voice command recognition
+- Manual ON/OFF control
+- Appliance status display
+- Real-time command execution
+- Mobile responsive UI
 
-### MQTT Workflow
-1. Mobile app publishes appliance control commands
-2. MQTT broker receives the commands
-3. ESP32 subscribes to relevant MQTT topics
-4. ESP32 processes received commands
-5. Relay module switches appliances accordingly
+Example commands:
+
+```text
+Turn on bedroom light
+Turn off hall light
+Toggle fan
+Reset all
+```
 
 ---
 
-# 🏗 System Architecture
-
-## Overall Architecture Flow
+## 🏗 System Architecture
 
 ```text
 User Voice Command
         ↓
-Mobile Application
+Web / Mobile Dashboard
         ↓
 Speech Recognition Processing
         ↓
@@ -127,6 +108,275 @@ ESP32 MQTT Subscriber
         ↓
 Command Processing
         ↓
-Relay Module Control
+Relay Module
         ↓
 Bedroom Light / Hall Light / DC Fan
+```
+
+---
+
+## 📡 MQTT Workflow
+
+1. User gives voice command through dashboard
+2. Speech recognition converts voice into command text
+3. Dashboard publishes command to MQTT broker
+4. ESP32 subscribes to MQTT topics
+5. ESP32 receives and processes commands
+6. Relay module switches corresponding appliance
+7. Appliance state updates in real time
+
+---
+
+## 📖 About MQTT Protocol
+
+MQTT (**Message Queuing Telemetry Transport**) is a lightweight messaging protocol designed specifically for IoT communication.
+
+It follows a **publish-subscribe architecture**, making it ideal for smart automation systems.
+
+### Why MQTT?
+
+- Lightweight protocol
+- Fast communication
+- Low bandwidth usage
+- Reliable message delivery
+- Scalable architecture
+- Perfect for IoT devices
+
+---
+
+## 🛠 Technologies Used
+
+### Hardware
+- ESP32 Development Board
+- 3 Channel Relay Module
+- DC Fan
+- LED Lights
+- Breadboard
+- Jumper Wires
+- Power Supply
+- Wi-Fi Router
+
+### Software
+- Arduino IDE
+- MQTT Broker (HiveMQ / Mosquitto)
+- HTML
+- CSS
+- JavaScript
+- Embedded C / Arduino Programming
+
+### Communication Protocol
+- MQTT
+
+---
+
+## 🔌 Hardware Connections
+
+| Component | ESP32 Pin |
+|----------|-----------|
+| Bedroom Light Relay | GPIO 23 |
+| Hall Light Relay | GPIO 22 |
+| DC Fan Relay | GPIO 21 |
+| Relay VCC | 5V |
+| Relay GND | GND |
+
+---
+
+## 🔧 Circuit Diagram
+
+![Circuit Diagram](circuit_diagram.png)
+
+---
+
+## 📂 Project Structure
+
+```text
+smart-home-automation-mqtt/
+│
+├── README.md
+├── LICENSE
+├── .gitignore
+├── smart_home_automation_mqtt.ino
+├── circuit_diagram.png
+├── app_dashboard.png
+├── project_demo.mp4
+├── project_presentation.pptx
+├── libraries_used.txt
+├── mqtt_topics.txt
+└── pin_connections.txt
+```
+
+---
+
+## 📚 Required Libraries
+
+Arduino libraries used:
+
+```cpp
+WiFi.h
+PubSubClient.h
+ArduinoJson.h
+```
+
+Install from Arduino Library Manager.
+
+---
+
+## ⚙ Installation Guide
+
+### 1. Clone Repository
+
+```bash
+git clone https://github.com/Girish-Pasupuleti/smart-home-automation-mqtt.git
+```
+
+---
+
+### 2. Open Arduino IDE
+
+Install Arduino IDE.
+
+---
+
+### 3. Install ESP32 Board Package
+
+Go to:
+
+```text
+Tools → Board Manager → Search ESP32
+```
+
+Install ESP32 package.
+
+---
+
+### 4. Install Libraries
+
+Install:
+
+- WiFi
+- PubSubClient
+- ArduinoJson
+
+---
+
+### 5. Configure Wi-Fi
+
+Update credentials:
+
+```cpp
+const char* ssid = "Girish's iphone";
+const char* password = "1234567890";
+```
+
+---
+
+### 6. Configure MQTT Broker
+
+```cpp
+const char* mqtt_server = "broker.hivemq.com";
+```
+
+---
+
+### 7. Upload Code
+
+Select ESP32 board and upload:
+
+```text
+smart_home_automation_mqtt.ino
+```
+
+---
+
+### 8. Connect Hardware
+
+Follow circuit diagram.
+
+---
+
+### 9. Launch Dashboard
+
+Open:
+
+```text
+https://home-automation-voice-control.netlify.app
+```
+
+Use voice/manual control.
+
+---
+
+## 🎥 Project Demo
+
+Demo video included:
+
+```text
+project_demo.mp4
+```
+
+---
+
+## 📑 Documentation
+
+Project presentation included:
+
+```text
+project_presentation.pptx
+```
+
+---
+
+## 🧠 Challenges Faced
+
+- MQTT connection debugging
+- Wi-Fi stability handling
+- Relay switching synchronization
+- Voice recognition accuracy
+- Dashboard responsiveness
+- Real-time device state handling
+
+---
+
+## 🔮 Future Enhancements
+
+- Temperature sensor integration
+- Humidity monitoring
+- Appliance scheduling
+- Energy consumption monitoring
+- Google Assistant integration
+- Alexa integration
+- Firebase cloud dashboard
+- Device authentication
+- Remote internet access
+
+---
+
+## 🌍 Applications
+
+- Smart homes
+- IoT automation
+- Voice-controlled embedded systems
+- Remote appliance management
+- Assistive smart automation
+
+---
+
+## 📈 Project Outcome
+
+Successfully developed a voice-controlled IoT smart home automation system capable of controlling multiple appliances in real time using MQTT communication, ESP32 embedded control, and a responsive dashboard interface.
+
+---
+
+## 👨‍💻 Author
+
+**Girish Pasupuleti**  
+Embedded Systems | IoT | AI/ML Enthusiast
+
+🔗 GitHub: https://github.com/Girish-Pasupuleti  
+🔗 Live Dashboard: https://home-automation-voice-control.netlify.app
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
